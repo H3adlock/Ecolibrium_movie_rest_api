@@ -1,0 +1,1 @@
+web: gunicorn ecolibrium_movie.wsgi
