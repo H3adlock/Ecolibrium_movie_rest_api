@@ -2,11 +2,24 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from decouple import config
+
+
 
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ecolibrium_movie.settings')
+    try:
+        """if .env file exists and ENV=dev django dev settings will be targeted"""
+        env = config('ENV')
+        if env == 'dev':
+            os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ecolibrium_movie.settings.dev')
+        elif env == 'prod':
+            os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ecolibrium_movie.settings.prod')
+        elif env == 'staging':
+            os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ecolibrium_movie.settings.staging')
+    except Exception:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ecolibrium_movie.settings.prod')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
