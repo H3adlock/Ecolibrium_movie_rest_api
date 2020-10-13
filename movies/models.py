@@ -1,18 +1,18 @@
 from django.db import models
 
 
-class Genre(models.Model):
-    """
-    Genre model : Table for movie Genres
-    """
-    name = models.CharField(max_length=500)
-
-    class Meta:
-        verbose_name = "Genre"
-        verbose_name_plural = "Genres"
-
-    def __str__(self):
-        return self.name
+# class Genre(models.Model):
+#     """
+#     Genre model : Table for movie Genres
+#     """
+#     name = models.CharField(max_length=500)
+#
+#     class Meta:
+#         verbose_name = "Genre"
+#         verbose_name_plural = "Genres"
+#
+#     def __str__(self):
+#         return self.name
 
 
 class Movie(models.Model):
@@ -23,7 +23,7 @@ class Movie(models.Model):
     imdb_score = models.FloatField()
     popularity = models.FloatField()
     director = models.CharField(max_length=500)
-    genre = models.ManyToManyField(Genre)
+    # genre = models.ManyToManyField(Genre)
 
     class Meta:
         verbose_name = "Movie"
