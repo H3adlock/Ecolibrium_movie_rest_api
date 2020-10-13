@@ -41,6 +41,3 @@ LOGGING = {
         }
     }
 }
-
-# Register database schemes in URLs.
-urlparse.uses_netloc.append('mysql')
