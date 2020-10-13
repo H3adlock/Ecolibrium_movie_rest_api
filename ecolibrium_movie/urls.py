@@ -25,8 +25,7 @@ urlpatterns = [
                   path('api-token-auth/', obtain_auth_token),
                   path('api-auth/', include('rest_framework.urls')),
                   path('', include(movie_url))
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
+              ]
 if settings.DEBUG:
     import debug_toolbar
 
