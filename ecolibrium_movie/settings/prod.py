@@ -8,8 +8,9 @@ if os.environ['DEBUG'] == 'False':
     DEBUG = False
 else:
     DEBUG = True
+
 SECRET_KEY = os.environ['SECRET_KEY']
-ALLOWED_HOSTS = ['ecolibrium-movies.herokuapp.com']
+ALLOWED_HOSTS = ['ecolibrium-movie.herokuapp.com']
 
 # heroku logging
 LOGGING = {
