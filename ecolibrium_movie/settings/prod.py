@@ -4,10 +4,12 @@ from urllib.parse import urlparse
 
 django_heroku.settings(locals())
 
-if os.environ['DEBUG'] == 'False':
-    DEBUG = False
-else:
-    DEBUG = True
+# if os.environ['DEBUG'] == 'False':
+#     DEBUG = False
+# else:
+#     DEBUG = True
+
+DEBUG = False
 
 SECRET_KEY = os.environ['SECRET_KEY']
 ALLOWED_HOSTS = ['ecolibrium-movie.herokuapp.com']
