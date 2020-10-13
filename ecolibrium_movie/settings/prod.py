@@ -1,11 +1,12 @@
 from .base import *
 import django_heroku
+from urllib.parse import urlparse
 
 django_heroku.settings(locals())
 
 DEBUG = False
 SECRET_KEY = os.environ['SECRET_KEY']
-ALLOWED_HOSTS = ['viewsfinder.herokuapp.com']
+ALLOWED_HOSTS = ['ecolibrium-movies.herokuapp.com']
 
 # heroku logging
 LOGGING = {
@@ -40,3 +41,6 @@ LOGGING = {
         }
     }
 }
+
+# Register database schemes in URLs.
+urlparse.uses_netloc.append('mysql')
