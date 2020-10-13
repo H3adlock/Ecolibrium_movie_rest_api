@@ -13,7 +13,8 @@ DEBUG = False
 
 SECRET_KEY = os.environ['SECRET_KEY']
 ALLOWED_HOSTS = ['ecolibrium-movie.herokuapp.com']
-
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
+DEBUG_PROPAGATE_EXCEPTIONS = True
 # heroku logging
 LOGGING = {
     'version': 1,
