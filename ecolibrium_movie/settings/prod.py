@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 
 django_heroku.settings(locals())
 
-DEBUG = False
+DEBUG = os.environ['DEBUG']
 SECRET_KEY = os.environ['SECRET_KEY']
 ALLOWED_HOSTS = ['ecolibrium-movies.herokuapp.com']
 
