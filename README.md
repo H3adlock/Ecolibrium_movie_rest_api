@@ -25,11 +25,11 @@ pip install -r reuqirements.txt
 ./manage.py load_dataset
 ```
 
-##Demo
+## Demo
 deployed in Heroku
 https://ecolibrium-movie.herokuapp.com/api/movies
 
-#API request examples
+# API request examples
 APIs for Generic or Anonymous user 
 ### For Authentication
 retrieve auth token by providing username and password in body
