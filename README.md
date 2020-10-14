@@ -26,7 +26,7 @@ pip install -r reuqirements.txt
 ```
 
 ##Demo
-https://ecolibrium-movie.herokuapp.com/api/movies
+   https://ecolibrium-movie.herokuapp.com/api/movies
 
 #API request examples
 
