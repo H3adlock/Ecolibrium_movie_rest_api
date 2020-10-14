@@ -17,6 +17,7 @@ source env_movie/bin/activate
 virtualenv env_movie
 source env_movie\Scripts\activate
 ```
+## Dependencies and Initializing
 ```
 pip install -r reuqirements.txt
 ./manage.py migrate
