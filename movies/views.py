@@ -40,12 +40,18 @@ class MovieListView(APIView):
 
 
 class MovieCreateView(generics.CreateAPIView):
+    """
+        API view adding Movies
+    """
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
     permission_classes = (IsAdminOrReadOnly,)
 
 
 class MovieDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+        API view update and delete
+    """
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
     permission_classes = (IsAdminOrReadOnly,)
