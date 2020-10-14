@@ -26,15 +26,16 @@ pip install -r reuqirements.txt
 ```
 
 ##Demo
-   https://ecolibrium-movie.herokuapp.com/api/movies
+deployed in Heroku
+https://ecolibrium-movie.herokuapp.com/api/movies
 
 #API request examples
-
+APIs for Generic or Anonymous user 
 ### For Authentication
 retrieve auth token by providing username and password in body
 https://ecolibrium-movie.herokuapp.com/api-token-auth/
 
-### For Anonymous Users
+### For Generic orAnonymous Users
 base API url
 https://ecolibrium-movie.herokuapp.com/api/movies
 
