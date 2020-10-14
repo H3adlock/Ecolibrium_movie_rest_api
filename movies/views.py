@@ -10,7 +10,6 @@ from .serializers import MovieSerializer
 from .permissions import IsAdminOrReadOnly
 
 
-# Create your views here.
 class MovieListView(APIView):
     """
     API view for searching Movies
@@ -27,11 +26,6 @@ class MovieListView(APIView):
         director = request.query_params.get('director', None)
         if director is not None:
             queryset = queryset.filter(director__icontains=director)
-
-        # filter if movie has genre with queried genre name
-        # genre = request.query_params.get('genre', None)
-        # if genre is not None:
-        #     queryset = queryset.filter(genre__name__icontains=genre)
 
         serializer = self.serializer_class(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)

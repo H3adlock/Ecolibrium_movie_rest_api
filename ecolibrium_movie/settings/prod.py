@@ -14,6 +14,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 ALLOWED_HOSTS = ['ecolibrium-movie.herokuapp.com']
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 DEBUG_PROPAGATE_EXCEPTIONS = True
+
 # heroku logging
 LOGGING = {
     'version': 1,
@@ -47,19 +48,14 @@ LOGGING = {
         }
     }
 }
-#
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'live-static-files','static_root')
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR,'live-static-files', 'media')
+
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
 VENV_PATH = os.path.dirname(BASE_DIR)
 STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(VENV_PATH, 'media')
-
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 # s3 storage configurations
@@ -70,4 +66,3 @@ AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
 AWS_S3_REGION_NAME = os.environ['AWS_S3_REGION_NAME']
 AWS_QUERYSTRING_AUTH = False
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

@@ -5,8 +5,6 @@ import sys
 from decouple import config
 
 
-
-
 def main():
     """Run administrative tasks."""
     try:
