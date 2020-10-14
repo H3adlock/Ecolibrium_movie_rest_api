@@ -43,3 +43,9 @@ class MovieCreateView(generics.CreateAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
     permission_classes = (IsAdminOrReadOnly,)
+
+
+class MovieDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+    permission_classes = (IsAdminOrReadOnly,)
