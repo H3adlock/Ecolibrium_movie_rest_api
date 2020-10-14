@@ -29,6 +29,9 @@ pip install -r reuqirements.txt
 deployed in Heroku
 https://ecolibrium-movie.herokuapp.com/api/movies
 
+# Postman Documentation
+https://documenter.getpostman.com/view/13017083/TVRoX6Xf 
+
 # API request examples
 APIs for Generic or Anonymous user 
 ### For Authentication
